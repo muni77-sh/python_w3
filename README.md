@@ -532,6 +532,121 @@ print(type(a))
 print(type(b))
 print(type(c))
 =======================================================
+4.python casting
+specify a variable type
+casting in python is therefore done using constructor functions:
+-->int()- constructs an integer number from an integer literal, a float literal
+(by removing all decimals), or a string literal (providing the string represents a whole number)
+
+-->floating()- constructs a float number from an integer literal, a float lteral or a string
+literal (providing the string represents a float or an integer)
+
+--> str() - constructs a string from a wide variety of data types, including strings, integer
+literals and float literals.
+
+1.a(int)
+x = int(1)
+y = int(2.8)
+z = int("3")
+print(x)
+print(y)
+print(z)
+
+2.b(float)
+x = float(1)
+y = float(2.8)
+z = float("3")
+w = float("4.2")
+print(x)
+print(y)
+print(z)
+print(w)
+
+2.c(str)
+x = str("s1")
+y = str(2)
+z = str(3.0)
+print(x)
+print(y)
+print(z)
+============================================================
+5.python string
+Strings in python are surrounded by either single quotation marks, or double quotation marks.
+
+'hello' is the same as "hello".
+
+You can display a string literal with the print() function:
+
+#You can use double or single quotes:
+
+print("Hello")
+print('Hello')
+
+1.a
+assign string to a variable
+assigning a string to a variable is done with the variable name followed by an equal 
+sign and the string
+
+a = "Hello"
+print(a)
+
+*. Multpline strings
+you can assign a multiline string to a variable by using 3 quotes:
+
+a = """Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua."""
+print(a)
+
+or three single quotes
+
+a = '''Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua.'''
+print(a)
+
+*. strings are Arrays
+strngs in python are arrays of bytes representing unicode character
+
+a = "Hello, World!"
+print(a[1])
+
+*.Looping through a string
+strings are arrays, we can loop through the character in a string, with a for loop.
+for x in "banana":
+  print(x) 
+
+string length
+To get the length of a string, use the len() function.
+a = "Hello, World!"
+print(len(a))
+
+*.check string
+txt = "The best things in life are free!"
+print("free" in txt)
+
+*. if statement
+txt = "The best things in life are free!"
+if "free" in txt:
+  print("Yes, 'free' is present.")
+
+*.check if NOT
+To check if a certain phrase or character is NOT present in a string, 
+we can use the keyword not in.
+
+txt = "The best things in life are free!"
+print("expensive" not in txt)
+
+*.Use it in an if statement:
+txt = "The best things in life are free!"
+if "expensive" not in txt:
+  print("Yes, 'expensive' is NOT present.")
+  ===========================================================================
+  
+
+
 
 
 
