@@ -644,6 +644,92 @@ txt = "The best things in life are free!"
 if "expensive" not in txt:
   print("Yes, 'expensive' is NOT present.")
   ===========================================================================
+  6.python-Slicing strings
+
+*.slicing
+You can return a range of characters by using the slice syntax.
+
+Specify the start index and the end index, separated by a colon, to return a part of the string.
+
+b = "Hello, World!"
+print(b[2:5])
+
+*.slice from the start
+By leaving out the start index, the range will start at the first character:
+
+b = "Hello, World!"
+print(b[:5])
+
+*.slice to the End
+b = "Hello, World!"
+print(b[2:])
+
+*.Negative Indexing
+Use negative indexes to start the slice from the end of the string:
+
+b = "Hello, World!"
+print(b[-5:-2])
+============================================================
+7.Modify Strings
+
+*.Upper Case:
+a = "Hello, World!"
+print(a.upper())
+
+*.lower Case
+a = "Hello, World!"
+print(a.lower())
+
+*.Remove Whitespace
+whitespace is the before and/or after the actual text, and very often you want to remove this space.
+
+a = " Hello, World! "
+print(a.strip()) # returns "Hello, World!"
+
+*.Replace string
+a = "Hello, World!"
+print(a.replace("H", "J"))
+
+*.Split string:
+a = "Hello, World!"
+print(a.split(",")) # returns ['Hello', ' World!']
+=====================================================================
+8.String Concatenation:
+to concatenate or combine two strings you can use + operator
+
+a = "Hello"
+b = "World"
+c = a + b
+print(c)
+
+* to add a space between them, add a " ":
+a = "Hello"
+b = "World"
+c = a + " " + b
+print(c)
+=====================================================
+9.Format - Strings
+we can combine strings and numbers by using the format() method
+
+age = 36
+txt = "My name is John, and I am {}"
+print(txt.format(age))
+
+quantity = 3
+itemno = 567
+price = 49.95
+myorder = "I want {} pieces of item {} for {} dollars."
+print(myorder.format(quantity, itemno, price))
+
+*.index numbers {0} to be sure the arguments are placed in the correct placeholders:
+quantity = 3
+itemno = 567
+price = 49.95
+myorder = "I want to pay {2} dollars for {0} pieces of item {1}."
+print(myorder.format(quantity, itemno, price))
+=================================================================================
+
+
   
 
 
