@@ -729,6 +729,750 @@ myorder = "I want to pay {2} dollars for {0} pieces of item {1}."
 print(myorder.format(quantity, itemno, price))
 =================================================================================
 
+11.String Methods
+
+11.2
+string casefold() method
+Syntax:string.casefold()
+
+txt = "Hello, And Welcome To My World!"
+
+x = txt.casefold()
+
+print(x)
+=======================================
+11.3
+string center() method
+txt = "banana"
+
+x = txt.center(20)
+
+print(x)
+
+the Center() method 
+Syntax :sring.center(Length, character)
+
+txt = "banana"
+
+x = txt.center(20, "O")
+
+print(x)
+
+================================================
+11.4
+Sting count() method
+Return the number of times the value "apple" appears in the string:
+txt = "I love apples, apple are my favorite fruit"
+
+x = txt.count("apple")
+
+print(x)
+
+DEF: the count() method returns the number of times a specified value
+appears in the string.
+syntax: string.count(value, start, end)
+
+Parameter	Description
+value	Required. A String. The string to value to search for
+start	Optional. An Integer. The position to start the search. Default is 0
+end	Optional. An Integer. The position to end the search. 
+Default is the end of the string
+
+txt = "I love apples, apple are my favorite fruit"
+
+x = txt.count("apple", 10, 24)
+
+print(x)
+=============================
+11.5
+String encode() method:
+txt = "My name is Ståle"
+
+x = txt.encode()
+
+print(x)
+
+Def and usage
+the encode() :using specified encoding. if no encoding is specified,
+Syntax:
+string:
+string.encode(encoding=encoding, errors=errors)
+
+*.parameter values
+
+Parameter	Description
+encoding	Optional. A String specifying the encoding to use. Default is UTF-8
+errors	Optional. A String specifying the error method. Legal values are:
+'backslashreplace'	- uses a backslash instead of the character that could not be encoded
+'ignore'	- ignores the characters that cannot be encoded
+'namereplace'	- replaces the character with a text explaining the character
+'strict'	- Default, raises an error on failure
+'replace'	- replaces the character with a questionmark
+'xmlcharrefreplace'	- replaces the character with an xml character
+
+
+*.txt = "My name is Ståle"
+
+print(txt.encode(encoding="ascii",errors="backslashreplace"))
+print(txt.encode(encoding="ascii",errors="ignore"))
+print(txt.encode(encoding="ascii",errors="namereplace"))
+print(txt.encode(encoding="ascii",errors="replace"))
+print(txt.encode(encoding="ascii",errors="xmlcharrefreplace"))
+========================================================
+11.6
+String endswith() method
+txt = "Hello, welcome to my world."
+
+x = txt.endswith(".")
+
+print(x)
+
+DEF
+endswith() method returns true if the string ends with specified value
+Syntax
+string.endswith(value, start,end)
+
+parameter values
+Parameter	Description
+value	Required. The value to check if the string ends with
+start	Optional. An Integer specifying at which position to start the search
+end	Optional. An Integer specifying at which position to end the search
+
+ex:1
+txt = "Hello, welcome to my world."
+
+x = txt.endswith("my world.")
+
+print(x)
+
+ex:2
+txt = "Hello, welcome to my world."
+
+x = txt.endswith("my world.")
+
+print(x)
+=================================
+11.7
+Sring expandtabs() method
+txt = "H\te\tl\tl\to"
+
+x =  txt.expandtabs(2)
+
+print(x)
+
+DEF:
+the expandtabs method sets the tab size to the specified number of whitespaces.
+syntax:
+string.expandtabs(tabsize)
+
+parameter values
+
+Parameter	Description
+tabsize	Optional. A number specifying the tabsize. Default tabsize is 8
+
+txt = "H\te\tl\tl\to"
+
+print(txt)
+print(txt.expandtabs())
+print(txt.expandtabs(2))
+print(txt.expandtabs(4))
+print(txt.expandtabs(10))
+
+=========================================
+11.8
+String find() method
+txt = "Hello, welcome to my world."
+
+x = txt.find("welcome")
+
+print(x)
+
+DEF:
+The find() method finds the first occurrence of the specified value.
+
+The find() method returns -1 if the value is not found.
+
+The find() method is almost the same as the index() method, 
+the only difference is that the index() method
+
+Syntax:
+string.find(value, start, end)
+
+Parameter values:
+Parameter	Description
+value	Required. The value to search for
+start	Optional. Where to start the search. Default is 0
+end	Optional. Where to end the search. Default is to the end of the string
+
+example:
+txt = "Hello, welcome to my world."
+
+x = txt.find("e")
+
+print(x)
+
+ex2:
+txt = "Hello, welcome to my world."
+
+x = txt.find("e", 5, 10)
+
+print(x)
+
+ex3
+txt = "Hello, welcome to my world."
+
+print(txt.find("q"))
+print(txt.index("q"))
+=======================================
+11.9
+String format() method
+txt = "For only {price:.2f} dollars!"
+print(txt.format(price = 49))
+
+DEF:
+The format() method formats the specified value(s) and insert them inside the string's placeholder.
+
+The placeholder is defined using curly brackets: {}. Read more about the placeholders in the Placeholder section below.
+
+The format() method returns the formatted string
+
+Synatx:
+string.format(value1, value2...)
+
+parameter:
+Parameter	Description
+value1, value2...	Required. One or more values that should be formatted and inserted in the string. The values can be A number specifying the position of the element you want to remove.
+
+The values are either a list of values separated by commas, a key=value list, or a combination of both.
+
+The values can be of any data type.
+
+#named indexes:
+txt1 = "My name is {fname}, I'm {age}".format(fname = "John", age = 36)
+#numbered indexes:
+txt2 = "My name is {0}, I'm {1}".format("John",36)
+#empty placeholders:
+txt3 = "My name is {}, I'm {}".format("John",36)
+
+print(txt1)
+print(txt2)
+print(txt3)
+
+Formatting Types
+Inside the placeholders you can add a formatting type to format the result:
+
+:<		Left aligns the result (within the available space)
+:>		Right aligns the result (within the available space)
+:^		Center aligns the result (within the available space)
+:=		Places the sign to the left most position
+:+		Use a plus sign to indicate if the result is positive or negative
+:-		Use a minus sign for negative values only
+: 		Use a space to insert an extra space before positive numbers (and a minus sign befor negative numbers)
+:,		Use a comma as a thousand separator
+:_		Use a underscore as a thousand separator
+:b		Binary format
+:c		Converts the value into the corresponding unicode character
+:d		Decimal format
+:e		Scientific format, with a lower case e
+:E		Scientific format, with an upper case E
+:f		Fix point number format
+:F		Fix point number format, in uppercase format (show inf and nan as INF and NAN)
+:g		General format
+:G		General format (using a upper case E for scientific notations)
+:o		Octal format
+:x		Hex format, lower case
+:X		Hex format, upper case
+:n		Number format
+:%		Percentage format
+=========================================================================
+
+12.Python Booleans:
+booleans represent one of two values: true or false
+
+print(10 > 9)
+print(10 == 9)
+print(10 < 9)
+
+*.
+a = 200
+b = 33
+
+if b > a:
+  print("b is greater than a")
+else:
+  print("b is not greater than a")
+
+*.Evaluate Values and Variable
+the bool() function allows you to evaluate any value,
+and give you true or false in return
+
+print(bool("Hello"))
+print(bool(15))
+
+Ex:
+x = "Hello"
+y = 15
+
+print(bool(x))
+print(bool(y))
+
+ex
+bool("abc")
+bool(123)
+bool(["apple", "cherry", "banana"])
+
+ex3
+bool(False)
+bool(None)
+bool(0)
+bool("")
+bool(())
+bool([])
+bool({})
+
+ex 4
+class myclass():
+  def __len__(self):
+    return 0
+
+myobj = myclass()
+print(bool(myobj))
+
+*.function can return a Boolean
+
+Ex1:
+def myFunction() :
+  return True
+
+if myFunction():
+  print("YES!")
+else:
+  print("NO!")
+======================================================
+13.
+python Operators:
+
+print(10 + 5)
+
+Arithmetic operators
+Assignment operators
+Comparison operators
+Logical operators
+Identity operators
+Membership operators
+Bitwise operators
+
+1.a
+Sub
+x = 5
+y = 3
+
+print(x - y)
+
+1.c
+Multiplication	
+x = 5
+y = 3
+
+print(x * y)
+
+1.d
+Division
+x = 12
+y = 3
+
+print(x / y)
+
+1.e
+Modulus
+x = 5
+y = 2
+
+print(x % y)
+
+1.f
+Exponentiation	
+x = 2
+y = 5
+
+print(x ** y) #same as 2*2*2*2*2
+
+1.g
+
+x = 15
+y = 2
+
+print(x // y)
+Floor division
+#the floor division // rounds the result down to the nearest whole number
+
+*.Assignment oper
+
+1.1
+x = 5
+
+print(x)
+
+1.2
+x = 5
+
+x += 3
+
+print(x)
+
+1.3
+x = 5
+
+x -= 3
+
+print(x)
+
+1.4
+x = 5
+
+x *= 3
+
+print(x)
+
+1.5
+
+	
+x = 5
+
+x /= 3
+
+print(x)
+
+1.6
+x = 5
+
+x%=3
+
+print(x)
+
+1.7
+x = 5
+
+x//=3
+
+print(x)
+
+1.8
+x = 5
+
+x **= 3
+
+print(x)
+
+1.9
+x = 5
+
+x &= 3
+
+print(x)
+
+1.10
+x = 5
+
+x |= 3
+
+print(x)
+
+1.11
+x = 5
+
+x ^= 3
+
+print(x)
+
+1.12
+x = 5
+
+x >>= 3
+
+print(x)
+
+
+1.13
+x = 5
+
+x <<= 3
+
+print(x)
+
+*. comparsion oper
+1.a
+x = 5
+y = 3
+
+print(x == y)
+
+# returns False because 5 is not equal to 3
+
+1.b
+x = 5
+y = 3
+
+print(x != y)
+
+# returns True because 5 is not equal to 3
+
+1.c
+x = 5
+y = 3
+
+print(x > y)
+
+# returns True because 5 is greater than 3
+
+1.d
+x = 5
+y = 3
+
+print(x < y)
+
+# returns False because 5 is not less than 3
+
+1.e
+x = 5
+y = 3
+
+print(x >= y)
+
+# returns True because five is greater, or equal, to 3
+
+1.f
+x = 5
+y = 3
+
+print(x <= y)
+
+# returns False because 5 is neither less than or equal to 3
+
+*.python logical oper
+1.a
+x = 5
+
+print(x > 3 and x < 10)
+
+# returns True because 5 is greater than 3 AND 5 is less than 10
+
+1.b
+x = 5
+
+print(x > 3 or x < 4)
+
+# returns True because one of the conditions are true
+ (5 is greater than 3, but 5 is not less than 4)
+
+1.c
+x = 5
+
+print(not(x > 3 and x < 10))
+
+# returns False because not is used to reverse the result
+
+*. Identity oper
+x = ["apple", "banana"]
+y = ["apple", "banana"]
+z = x
+
+print(x is z)
+
+# returns True because z is the same object as x
+
+print(x is y)
+
+# returns False because x is not the same object as y,
+ even if they have the same content
+
+print(x == y)
+
+# to demonstrate the difference betweeen "is" and "==":
+ this comparison returns True because x is equal to y
+
+ex2
+x = ["apple", "banana"]
+y = ["apple", "banana"]
+z = x
+
+print(x is not z)
+
+# returns False because z is the same object as x
+
+print(x is not y)
+
+# returns True because x is not the same object as y,
+ even if they have the same content
+
+print(x != y)
+
+# to demonstrate the difference betweeen "is not" and "!=": 
+this comparison returns False because x is equal to y
+==============================================================
+14.
+Python lists:
+thislist = ["apple", "banana", "cherry"]
+print(thislist)
+
+*. List Length
+To determine how many items a list has, use the len() function:
+thislist = ["apple", "banana", "cherry"]
+print(len(thislist))
+
+*.data types
+list1 = ["apple", "banana", "cherry"]
+list2 = [1, 5, 7, 9, 3]
+list3 = [True, False, False]
+
+*.type()
+mylist = ["apple", "banana", "cherry"]
+print(type(mylist))
+
+*. the list() constructor
+thislist = list(("apple", "banana", "cherry")) # note the double round-brackets
+print(thislist)
+========================================================================
+15.
+Access items
+thislist = ["apple", "banana", "cherry"]
+print(thislist[1])
+
+*.Negative indexing
+thislist = ["apple", "banana", "cherry"]
+print(thislist[-1])
+
+*.range of Indexes
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+print(thislist[2:5])
+=================================================================================
+16. 
+change list itr
+
+thislist = ["apple", "banana", "cherry"]
+thislist[1] = "blackcurrant"
+print(thislist)
+
+ex1
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"]
+thislist[1:3] = ["blackcurrant", "watermelon"]
+print(thislist)
+
+ex2
+thislist = ["apple", "banana", "cherry"]
+thislist[1:2] = ["blackcurrant", "watermelon"]
+print(thislist)
+
+*.Insert
+thislist = ["apple", "banana", "cherry"]
+thislist.insert(2, "watermelon")
+print(thislist)
+==============================================================
+17.
+Add list items
+
+*.Append Items
+
+thislist = ["apple", "banana", "cherry"]
+thislist.append("orange")
+print(thislist)
+
+*.Insert Items
+thislist = ["apple", "banana", "cherry"]
+thislist.insert(1, "orange")
+print(thislist)
+
+ex1
+thislist = ["apple", "banana", "cherry"]
+tropical = ["mango", "pineapple", "papaya"]
+thislist.extend(tropical)
+print(thislist)
+
+*.add any Iterable
+thislist = ["apple", "banana", "cherry"]
+thistuple = ("kiwi", "orange")
+thislist.extend(thistuple)
+print(thislist)
+
+=====================================================================
+18.
+Remove list Items:
+
+thislist = ["apple", "banana", "cherry"]
+thislist.remove("banana")
+print(thislist)
+
+*. Remove  specified Index
+the pop()
+thislist = ["apple", "banana", "cherry"]
+thislist.pop(1)
+print(thislist)
+
+ex1
+thislist = ["apple", "banana", "cherry"]
+thislist.pop()
+print(thislist)
+
+Ex:
+del
+thislist = ["apple", "banana", "cherry"]
+del thislist[0]
+print(thislist)
+
+ex1
+thislist = ["apple", "banana", "cherry"]
+del thislist
+
+*
+clear the list
+thislist = ["apple", "banana", "cherry"]
+thislist.clear()
+print(thislist)
+==================================================================
+19.
+Loop through a list
+thislist = ["apple", "banan", "cherry"]
+for x in thislist:
+print(x)
+
+*.Loop through the index numbers
+Use the range() and len() functions to create a suitable iterable.
+
+this
+list = ["apple", "banana", "cherry"]
+for i in range(len(thislist)):
+  print(thislist[i])
+
+*. using a while loop
+You can loop through the list items by using a while loop.
+
+thislist = ["apple", "banana", "cherry"]
+i = 0
+while i < len(thislist):
+  print(thislist[i])
+  i = i + 1
+
+*Looping Using liat comprehension
+
+thislist = ["apple", "banana", "cherry"]
+[print(x) for x in thislist]
+====================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
 
